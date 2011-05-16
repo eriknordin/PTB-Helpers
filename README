@@ -1,5 +1,5 @@
 Some nice tools to help you work with Joal Abrahamssons PageTypeBuilder for EPiServer CMS.
-CreatePTBClasses: Creates .cs-files for page types in an existing project not using PageTypeBuilder.
-MatchPTBProperties: Helps you to keep your page types up2date if you change/remove properties from code.
+CreatePTBClasses: Creates .cs-files for page types in an existing project not using PageTypeBuilder. (http://antecknat.se/blog/2009/11/02/creating-classes-for-pagetypebuilder-in-an-existing-project/)
+MatchPTBProperties: Helps you to keep your page types up2date if you change/remove properties from code. (http://antecknat.se/blog/2010/11/10/find-miss-matches-between-episerver-and-pagetypebuilder-properties/)
 
 Will probably add some code snippets for PTB in a few days.
