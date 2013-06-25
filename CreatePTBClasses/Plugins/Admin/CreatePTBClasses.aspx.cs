@@ -188,7 +188,7 @@ namespace {0}.Tabs
           pdf.Name,
           pdf.Searchable.ToString().ToLower(),
           pdf.DefaultValue,
-          GetLongStringSettings(pdf),
+          string.Empty,
           pdf.DefaultValueType.ToString());
                 }
             }
@@ -196,33 +196,7 @@ namespace {0}.Tabs
             return ret.ToString();
         }
 
-        private string GetLongStringSettings(PageDefinition pdf)
-        {
-            if (pdf.Type.DataType == EPiServer.Core.PropertyDataType.LongString)
-            {
-                if (pdf.LongStringSettings == 0)
-                {
-                    return @", 
-            ClearAllLongStringSettings = true";
-                }
-                else
-                {                    
-                    StringBuilder ret = new StringBuilder();
-                    ret.AppendFormat(@",
-            LongStringSettings = EPiServer.Editor.EditorToolOption.All");
-                    foreach (EPiServer.Editor.EditorToolOption a in Enum.GetValues(typeof(EPiServer.Editor.EditorToolOption)))
-                    {
-                        if ((pdf.LongStringSettings & a) <= 0 && a != EPiServer.Editor.EditorToolOption.All)
-                        {
-                            ret.AppendFormat(" ^ {0}", "EPiServer.Editor.EditorToolOption." + a.ToString());
-                        }
-                    }
-
-                    return ret.ToString();
-                }
-            }
-            return string.Empty;
-        }
+      
 
         private string GetDataType(EPiServer.Core.PropertyDataType propertyDataType)
         {
